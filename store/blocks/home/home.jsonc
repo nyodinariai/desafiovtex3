@@ -1,0 +1,268 @@
+{
+  "store.home": { 
+    "blocks": [
+      "tab-layout#home",
+      "list-context.image-list#banner",
+      "tab-content#home",
+      "flex-layout.row",
+      "flex-layout.col"
+    ]
+  },
+
+
+  //Tab layout
+  "tab-layout#home":{ 
+   "children": [
+     "tab-list"
+    //  "tab-content"
+   ]
+ },
+
+
+// Categorias
+ "tab-list": {
+  "children": [
+    "tab-list.item#1",
+    "tab-list.item#2",
+    "tab-list.item#3",
+    "tab-list.item#4",
+    "tab-list.item#5"
+    ]
+},
+
+//Categoria 1
+
+"tab-list.item#1": {
+  "props": {
+    "tabId": "promocao",
+    "label": "PROMOÇÃO"
+  }
+},
+
+//Categoria 2
+"tab-list.item#2": {
+  "props": {
+    "tabId": "signos",
+    "label": "SIGNOS"
+  }
+},
+
+//Categoria 3
+"tab-list.item#3": {
+  "props": {
+    "tabId": "majorAppliances3",
+    "label": "Major Appliances"
+  }
+},
+
+
+//Categoria 4
+"tab-list.item#4": {
+  "props": {
+    "tabId": "majorAppliances4",
+    "label": "Major Appliances"
+  }
+},
+
+//Categoria 5
+"tab-list.item#5": {
+  "props": {
+    "tabId": "majorAppliances5",
+    "label": "Major Appliances"
+  }
+},
+
+//Conteudo
+   
+"tab-content#home": {
+  "children": [
+    "tab-content.item#1",
+    "tab-content.item#2",
+    "tab-content.item#3",
+    "tab-content.item#4",
+    "tab-content.item#5"
+    ]
+},
+
+
+//Conteudo 1
+"tab-content.item#1": {
+  "children": [
+    "list-context.product-list#promo"
+  ],
+  "props": {
+    "tabId": "promocao"
+  }
+},
+
+"list-context.product-list#promo": {
+  "props": {
+    "category": "20/24",
+    "hideUnavailableItems": true
+  },
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#promo"]
+},
+"product-summary.shelf": {
+  "children": [
+    "product-summary-name",
+    "product-summary-image",
+    "product-selling-price",
+    "product-summary-buy-button"
+  ]
+},
+
+"slider-layout#promo":{
+  "props": {
+    "itemsPerPage": {
+      "desktop": 8,
+      "tablet": 2,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+
+},
+
+//Conteudo 2
+
+"tab-content.item#2": {
+  "children": [
+    "list-context.product-list#promo"
+  ],
+  "props": {
+    "tabId": "signos"
+  }
+},
+
+"list-context.product-list#signos": {
+  "props": {
+    "category": "20/21",
+    "hideUnavailableItems": true
+  },
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#signos"]
+},
+
+"product-summary.shelf": {
+  "children": [
+    "product-summary-name",
+    "product-summary-image",
+    "product-selling-price",
+    "product-summary-buy-button"
+  ]
+},
+
+"slider-layout#signos":{
+  "props": {
+    "itemsPerPage": {
+      "desktop": 8,
+      "tablet": 2,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+
+},
+
+// Conteudo 3
+"tab-content.item#3": {
+  "children": [
+    "rich-text#3"
+  ],
+  "props": {
+    "tabId": "majorAppliances3"
+  }
+},
+
+"rich-text#3": {
+  "props": {
+    "text": "Texto para Major Appliances",
+    "textPosition": "CENTER",
+    "font": "t-heading-3"
+  }
+},
+
+
+//Conteudo 4
+"tab-content.item#4": {
+  "children": [
+    "rich-text#4"
+  ],
+  "props": {
+    "tabId": "majorAppliances4"
+  }
+},
+
+"rich-text#4": {
+  "props": {
+    "text": "Texto para Major Appliances",
+    "textPosition": "CENTER",
+    "font": "t-heading-3"
+  }
+},
+
+"tab-content.item#5": {
+  "children": [
+    "rich-text#5"
+  ],
+  "props": {
+    "tabId": "majorAppliances5"
+  }
+},
+
+"rich-text#5": {
+  "props": {
+    "text": "Texto para Major Appliances",
+    "textPosition": "CENTER",
+    "font": "t-heading-3"
+  }
+},
+
+
+
+  // Slider Layout
+  "list-context.image-list#banner":{
+    "children": ["slider-layout#home"],
+    "props": {
+      "height": "300",
+      "images":[
+        {
+        "image":{
+          "props": {
+            "src": "assets/img/banner1.png"
+          }
+        }
+      },
+        {
+          "image":{
+            "props": {
+              "src": "assets/img/banner2.png"
+            }
+          }
+        }
+        
+      ]
+  }
+},
+
+  "slider-layout#home": { //
+  "props": {
+  "autoplay": {
+  "timeout": 5000,
+  "stopOnHover": false
+  },
+     "itemsPerPage": {
+       "desktop": 1,
+       "tablet": 1,
+       "phone": 1
+     }
+   }
+ }
+
+
+}
