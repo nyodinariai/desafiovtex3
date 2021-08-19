@@ -50,8 +50,8 @@
 //Categoria 3
 "tab-list.item#3": {
   "props": {
-    "tabId": "majorAppliances3",
-    "label": "Major Appliances"
+    "tabId": "corintians",
+    "label": "CORINTIANS"
   }
 },
 
@@ -59,16 +59,16 @@
 //Categoria 4
 "tab-list.item#4": {
   "props": {
-    "tabId": "majorAppliances4",
-    "label": "Major Appliances"
+    "tabId": "palmeiras",
+    "label": "PALMEIRAS"
   }
 },
 
 //Categoria 5
 "tab-list.item#5": {
   "props": {
-    "tabId": "majorAppliances5",
-    "label": "Major Appliances"
+    "tabId": "guerreiros",
+    "label": "GUERREIROS"
   }
 },
 
@@ -130,7 +130,7 @@
 
 "tab-content.item#2": {
   "children": [
-    "list-context.product-list#promo"
+    "list-context.product-list#signos"
   ],
   "props": {
     "tabId": "signos"
@@ -172,58 +172,134 @@
 // Conteudo 3
 "tab-content.item#3": {
   "children": [
-    "rich-text#3"
+    "list-context.product-list#corintians"
   ],
   "props": {
-    "tabId": "majorAppliances3"
+    "tabId": "corintians"
   }
 },
 
-"rich-text#3": {
+"list-context.product-list#corintians": {
   "props": {
-    "text": "Texto para Major Appliances",
-    "textPosition": "CENTER",
-    "font": "t-heading-3"
+    "category": "20/22",
+    "hideUnavailableItems": true
+  },
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#corintians"]
+},
+
+"product-summary.shelf": {
+  "children": [
+    "product-summary-name",
+    "product-summary-image",
+    "product-selling-price",
+    "product-summary-buy-button"
+  ]
+},
+
+"slider-layout#corintians":{
+  "props": {
+    "itemsPerPage": {
+      "desktop": 8,
+      "tablet": 2,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
   }
+
 },
 
 
 //Conteudo 4
 "tab-content.item#4": {
   "children": [
-    "rich-text#4"
+    "list-context.product-list#palmeiras"
   ],
   "props": {
-    "tabId": "majorAppliances4"
+    "tabId": "palmeiras"
   }
 },
 
-"rich-text#4": {
+"list-context.product-list#palmeiras": {
   "props": {
-    "text": "Texto para Major Appliances",
-    "textPosition": "CENTER",
-    "font": "t-heading-3"
-  }
+    "category": "20/23",
+    "hideUnavailableItems": true
+  },
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#palmeiras"]
 },
+
+"product-summary.shelf": {
+  "children": [
+    "product-summary-name",
+    "product-summary-image",
+    "product-selling-price",
+    "product-summary-buy-button"
+  ]
+},
+
+"slider-layout#palmeiras":{
+  "props": {
+    "itemsPerPage": {
+      "desktop": 8,
+      "tablet": 2,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+
+},
+
+
+
+
+
+//Conteudo 5
 
 "tab-content.item#5": {
   "children": [
-    "rich-text#5"
+    "list-context.product-list#guerreiros"
   ],
   "props": {
-    "tabId": "majorAppliances5"
+    "tabId": "guerreiros"
   }
 },
 
-"rich-text#5": {
+"list-context.product-list#guerreiros": {
   "props": {
-    "text": "Texto para Major Appliances",
-    "textPosition": "CENTER",
-    "font": "t-heading-3"
-  }
+    "category": "20/27",
+    "hideUnavailableItems": true
+  },
+  "blocks": ["product-summary.shelf"],
+  "children": ["slider-layout#guerreiros"]
 },
 
+"product-summary.shelf": {
+  "children": [
+    "product-summary-name",
+    "product-summary-image",
+    "product-selling-price",
+    "product-summary-buy-button"
+  ]
+},
 
+"slider-layout#guerreiros":{
+  "props": {
+    "itemsPerPage": {
+      "desktop": 8,
+      "tablet": 2,
+      "phone": 1
+    },
+    "infinite": true,
+    "fullWidth": false,
+    "blockClass": "shelf"
+  }
+
+},
 
   // Slider Layout
   "list-context.image-list#banner":{
@@ -234,14 +310,14 @@
         {
         "image":{
           "props": {
-            "src": "assets/img/banner1.png"
+            "src": "./assets/img/banner1.png"
           }
         }
       },
         {
           "image":{
             "props": {
-              "src": "assets/img/banner2.png"
+              "src": "./assets/img/banner2.png"
             }
           }
         }
