@@ -1,20 +1,24 @@
 {
   "store.home": { 
     "blocks": [
-      "tab-layout#home",
-      "list-context.image-list#banner",
-      "tab-content#home",
-      "flex-layout.row",
-      "flex-layout.col"
+      "flex-layout.row#menu",
+      "flex-layout.row#banner",
+      "flex-layout.row#shelf"
     ]
   },
 
+  "flex-layout.row#menu":{
+    "children":["flex-layout.col#menu"]
+  },
+
+  "flex-layout.col#menu":{
+    "children":["tab-layout#home"]
+  },
 
   //Tab layout
   "tab-layout#home":{ 
    "children": [
      "tab-list"
-    //  "tab-content"
    ]
  },
 
@@ -35,7 +39,8 @@
 "tab-list.item#1": {
   "props": {
     "tabId": "promocao",
-    "label": "PROMOÇÃO"
+    "label": "PROMOÇÃO",
+    "blockClass":"listButton"
   }
 },
 
@@ -43,7 +48,8 @@
 "tab-list.item#2": {
   "props": {
     "tabId": "signos",
-    "label": "SIGNOS"
+    "label": "SIGNOS",
+    "blockClass":"listButton"
   }
 },
 
@@ -51,7 +57,8 @@
 "tab-list.item#3": {
   "props": {
     "tabId": "corintians",
-    "label": "CORINTIANS"
+    "label": "CORINTIANS",
+    "blockClass":"listButton"
   }
 },
 
@@ -60,7 +67,8 @@
 "tab-list.item#4": {
   "props": {
     "tabId": "palmeiras",
-    "label": "PALMEIRAS"
+    "label": "PALMEIRAS",
+    "blockClass":"listButton"
   }
 },
 
@@ -68,12 +76,40 @@
 "tab-list.item#5": {
   "props": {
     "tabId": "guerreiros",
-    "label": "GUERREIROS"
+    "label": "GUERREIROS",
+    "blockClass":"listButton"
+  }
+},
+   
+//Banner
+
+"flex-layout.row#banner":{
+  "children":["flex-layout.col#banner"]
+},
+
+"flex-layout.col#banner":{
+  "children":["slider-layout#banner"],
+  "props":{
+    "horizontalAlign":"center"
   }
 },
 
-//Conteudo
-   
+// Produtos
+
+"flex-layout.row#shelf":{
+  "children":[
+    "flex-layout.col#shelf"
+  ]
+},
+
+"flex-layout.col#shelf":{
+  "props":{
+    "horizontalAlign":"center"
+  },
+  "children":["tab-content#home"]
+},
+
+// Lista de Produtos
 "tab-content#home": {
   "children": [
     "tab-content.item#1",
@@ -83,7 +119,6 @@
     "tab-content.item#5"
     ]
 },
-
 
 //Conteudo 1
 "tab-content.item#1": {
@@ -95,15 +130,17 @@
   }
 },
 
+
+
 "list-context.product-list#promo": {
   "props": {
-    "category": "20/24",
+    "category": "20", //24
     "hideUnavailableItems": true
   },
-  "blocks": ["product-summary.shelf"],
+  "blocks": ["product-summary.shelf#promo"],
   "children": ["slider-layout#promo"]
 },
-"product-summary.shelf": {
+"product-summary.shelf#promo": {
   "children": [
     "product-summary-name",
     "product-summary-image",
@@ -115,7 +152,7 @@
 "slider-layout#promo":{
   "props": {
     "itemsPerPage": {
-      "desktop": 8,
+      "desktop": 2,
       "tablet": 2,
       "phone": 1
     },
@@ -142,11 +179,11 @@
     "category": "20/21",
     "hideUnavailableItems": true
   },
-  "blocks": ["product-summary.shelf"],
+  "blocks": ["product-summary.shelf#signos"],
   "children": ["slider-layout#signos"]
 },
 
-"product-summary.shelf": {
+"product-summary.shelf#signos": {
   "children": [
     "product-summary-name",
     "product-summary-image",
@@ -184,11 +221,11 @@
     "category": "20/22",
     "hideUnavailableItems": true
   },
-  "blocks": ["product-summary.shelf"],
+  "blocks": ["product-summary.shelf#corintians"],
   "children": ["slider-layout#corintians"]
 },
 
-"product-summary.shelf": {
+"product-summary.shelf#corintians": {
   "children": [
     "product-summary-name",
     "product-summary-image",
@@ -227,11 +264,11 @@
     "category": "20/23",
     "hideUnavailableItems": true
   },
-  "blocks": ["product-summary.shelf"],
+  "blocks": ["product-summary.shelf#palmeiras"],
   "children": ["slider-layout#palmeiras"]
 },
 
-"product-summary.shelf": {
+"product-summary.shelf#palmeiras": {
   "children": [
     "product-summary-name",
     "product-summary-image",
@@ -274,11 +311,11 @@
     "category": "20/27",
     "hideUnavailableItems": true
   },
-  "blocks": ["product-summary.shelf"],
+  "blocks": ["product-summary.shelf#guerreiros"],
   "children": ["slider-layout#guerreiros"]
 },
 
-"product-summary.shelf": {
+"product-summary.shelf#guerreiros": {
   "children": [
     "product-summary-name",
     "product-summary-image",
@@ -302,31 +339,9 @@
 },
 
   // Slider Layout
-  "list-context.image-list#banner":{
-    "children": ["slider-layout#home"],
-    "props": {
-      "height": "300",
-      "images":[
-        {
-        "image":{
-          "props": {
-            "src": "./assets/img/banner1.png"
-          }
-        }
-      },
-        {
-          "image":{
-            "props": {
-              "src": "./assets/img/banner2.png"
-            }
-          }
-        }
-        
-      ]
-  }
-},
 
-  "slider-layout#home": { //
+
+  "slider-layout#banner": { //
   "props": {
   "autoplay": {
   "timeout": 5000,
@@ -336,9 +351,30 @@
        "desktop": 1,
        "tablet": 1,
        "phone": 1
-     }
-   }
- }
+     },
+     "infinite":true,
+     "blockClass": "carousel",
+     "showNavigationArrows":"desktopOnly"
+   },
+   "children": ["image#banner1","image#banner2"]
+ },
 
+"image#banner1":{
+  "props":{
+    "src":"assets/image/banner1.png",
+    "maxHeight": 350,
+    "height":"100%",
+    "blockClass":"bannerImages"
+  }
+},
+
+  "image#banner2":{
+    "props":{
+      "src":"assets/image/banner2.png",
+      "maxHeight": 350,
+      "height":"100%",
+      "blockClass":"bannerImages"
+    }
+  }
 
 }

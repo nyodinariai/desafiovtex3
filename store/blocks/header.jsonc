@@ -22,22 +22,25 @@
       "verticalAlign": "center",
       "preventHorizontalStretch": true,
       "preventVerticalStretch": true,
-      "fullWidth": true
+      "fullWidth": true,
+      "blockClass":"navbar"
     },
     "children": [
       "flex-layout.col#logo-desktop",
-      "flex-layout.col#spacer",
-      "search-bar",
+      "flex-layout.col#searchBar",
+      //"search-bar",
       "locale-switcher",
       "login",
       "minicart.v2"
     ]
   },
 
-
-  "flex-layout.col#spacer": {
+//Alteração da Search-bar
+  "flex-layout.col#searchBar": {
+    "children":["search-bar"],
     "props": {
-      "width": "grow"
+      "width": "grow",
+      "horizontalAlign":"center"
     }
   },
   "flex-layout.col#logo-desktop": {
@@ -50,8 +53,15 @@
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg",
-      "width": "80"
+      "url": "assets/image/logo.png",
+      "width": "150"
+    }
+  },
+
+  "search-bar":{
+    "props":{
+      "autocompleteFullWidth": true,
+      "blockClass":"homeSearchBar"
     }
   },
   "header-layout.mobile": {
@@ -72,10 +82,17 @@
       "blockClass": "main-header-mobile",
       "preventHorizontalStretch": true,
       "preserveLayoutOnMobile": true,
-      "fullWidth": true
+      "fullWidth": true,
+      "blockClass":"navbar"
     }
   },
   "drawer": {
     "children": []
+  },
+
+  "flex-layout.col#spacer": {
+    "props": {
+      "width": "grow"
+    }
   }
 }
