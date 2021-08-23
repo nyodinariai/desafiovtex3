@@ -1,7 +1,46 @@
-.flexRowContent--navbar{
+.flexRow--navBar{
     color: #fff;
     background-color: #212121;
 }
-.flexRow{
-    background-color: #212121;
+.flexRow--bannerhome{
+    margin-top: 80px ;
 }
+
+.flexRow--footer{
+    background-color: #424242;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    z-index: 10001;
+}
+
+.flexCol--footercol{
+    height: 80px;
+    align-items: center;
+}
+
+.flexColChild--footercol{
+    color: #fff;
+}
+
+.flexRow--priceheader{
+    height: 80px;
+    padding-top:20px;
+}
+
+.flexRow--prelancamento{
+    background-color:rgb(20, 255, 0) ;
+    color: #000;
+}
+
+.flexRow--topicons{
+    color:#fff;
+    justify-content: center;
+}
+
+.flexColChild--topicons{
+    height: 25px;
+    background-color: #424242;
+    border-radius: 100%;
+}
+ 

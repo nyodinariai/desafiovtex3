@@ -13,14 +13,109 @@
     ]
   },
   "flex-layout.row#footer": { 
+    "props":{
+      "blockClass":"footer",
+      "marginTop":"5"
+    },
     "children": [
-      "image"
+      "flex-layout.row#icon"
     ]
   },
-  "image": {
-    "props": {
-      "width": 100,
-      "src": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg"
+  
+  "flex-layout.row#icon":{
+    "children":[
+      "flex-layout.col#spacer",
+      "flex-layout.col#perfil",
+      "flex-layout.col#desafios",
+      "flex-layout.col#loja",
+      "flex-layout.col#suporte",
+      "flex-layout.col#spacer"
+    ]
+  },
+
+  "flex-layout.col#perfil":{
+    "props":{
+      "width":"10%",
+      "verticalAlign":"middle",
+      "horizontalAlign":"center",
+      "blockClass":"footercol"
+    },
+    "children":[
+      "icon-profile",
+      "rich-text#profile"
+    ]
+  },
+
+  "rich-text#profile":{
+    "props":{
+      "text":"ENTRAR",
+      "blockClass":"footertext"
+    }
+  },
+
+  "flex-layout.col#desafios":{
+    "props":{
+      "width":"10%",
+      "verticalAlign":"middle",
+      "horizontalAlign":"center",
+      "blockClass":"footercol"
+    },
+    "children":[
+      "icon-profile",
+      "rich-text#desafios"
+    ]
+  },
+
+  "rich-text#desafios":{
+    "props":{
+      "text":"DESAFIOS",
+      "blockClass":"footertext"
+    }
+  },
+
+  "flex-layout.col#loja":{
+    "props":{
+      "width":"10%",
+      "verticalAlign":"middle",
+      "horizontalAlign":"center",
+      "blockClass":"footercol"
+    },
+    "children":[
+      "icon-profile",
+      "rich-text#loja"
+    ]
+  },
+
+  "rich-text#loja":{
+    "props":{
+      "text":"LOJA",
+      "blockClass":"footertext"
+    }
+  },
+
+  "flex-layout.col#suporte":{
+    "props":{
+      "width":"10%",
+      "verticalAlign":"middle",
+      "horizontalAlign":"center",
+      "blockClass":"footercol"
+    },
+    "children":[
+      "icon-profile",
+      "rich-text#suporte"
+    ]
+  },
+
+  "rich-text#suporte":{
+    "props":{
+      "text":"SUPORTE",
+      "blockClass":"footertext"
+    }
+  },
+  
+  "icon-profile":{
+    "props":{
+      "blockClass":"footer-icon"
     }
   }
 }

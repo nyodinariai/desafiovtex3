@@ -16,6 +16,8 @@
     },
     "children": ["flex-layout.row#desktop"]
   },
+
+
   "flex-layout.row#desktop": {
     "props": {
       "horizontalAlign": "center",
@@ -23,12 +25,13 @@
       "preventHorizontalStretch": true,
       "preventVerticalStretch": true,
       "fullWidth": true,
-      "blockClass":"navbar"
+      "blockClass":"navBar"
     },
     "children": [
       "flex-layout.col#logo-desktop",
-      "flex-layout.col#searchBar",
-      //"search-bar",
+      "flex-layout.col#spacer",
+      "search-bar",
+      "flex-layout.col#spacer",
       "locale-switcher",
       "login",
       "minicart.v2"
@@ -36,13 +39,11 @@
   },
 
 //Alteração da Search-bar
-  "flex-layout.col#searchBar": {
-    "children":["search-bar"],
-    "props": {
-      "width": "grow",
-      "horizontalAlign":"center"
-    }
-  },
+"flex-layout.col#spacer": {
+  "props": {
+    "width": "grow"
+  }
+},
   "flex-layout.col#logo-desktop": {
     "props": {
       "verticalAlign": "middle"
@@ -60,8 +61,10 @@
 
   "search-bar":{
     "props":{
-      "autocompleteFullWidth": true,
-      "blockClass":"homeSearchBar"
+      "autocompleteFullWidth": false,
+      "blockClass":"upmedalsearchbar",
+      "hasIconLeft":false,
+      "autoFocus":true	
     }
   },
   "header-layout.mobile": {
@@ -82,17 +85,10 @@
       "blockClass": "main-header-mobile",
       "preventHorizontalStretch": true,
       "preserveLayoutOnMobile": true,
-      "fullWidth": true,
-      "blockClass":"navbar"
+      "fullWidth": true
     }
   },
   "drawer": {
     "children": []
-  },
-
-  "flex-layout.col#spacer": {
-    "props": {
-      "width": "grow"
-    }
   }
 }

@@ -1,7 +1,10 @@
-.listContainer {
+.listContainer--upmedal{
+    position: fixed;
+    top: 64px;
     background-color: #212121;
     margin-bottom: 0px;
-    color: #fff
+    color: #fff;
+    z-index: 1000;
 }
 .listItem--listButton :global(.vtex-button){
     background-color: #212121;

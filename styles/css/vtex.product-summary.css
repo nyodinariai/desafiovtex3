@@ -1,0 +1,12 @@
+.container--upmedal{
+    background: #424242;
+}
+
+.productBrand--upmedal{
+    color: #fff;
+}
+
+.triggerContainer,
+.triggerContainer--upmedal{
+    opacity: 1;
+}

@@ -1,3 +1,45 @@
-.imageElement--bannerImages{
-    border-radius: 15px;
+.carouselGaleryThumbs--upmedalthumb{
+    display: none;
 }
+.carouselContainer--upmedalthumb{
+    height: 100%;
+}
+
+.carouselGaleryCursor{
+    margin-left:auto ;
+    margin-right: auto;
+}
+
+.productImagesGallerySlide--upmedalthumb{
+    width: 100%;
+}
+
+.searchBarContainer :global(.vtex-input-prefix__group){
+    min-width: 770px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #fff;
+}
+
+.searchBarContainer :global(.vtex-styleguide-9-x-input){
+    border-bottom: none;
+    background: transparent;
+}
+
+.searchBarContainer :global(.vtex-input__suffix){
+    display: none;
+}
+
+.listPrice{
+    display: none;
+}
+.listPriceValue{
+    display: none;
+}
+.sellingPrice{
+    color:rgb(20, 255, 0);
+}
+.installmentsPrice{
+    display: none;
+}
+
